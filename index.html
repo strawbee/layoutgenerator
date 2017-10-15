@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Layout Generator</title>
+    <link rel="stylesheet" href="css/reset.css" \>
+    <link rel="stylesheet" href="templates/topnavfixed/style.css" \>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>Layout Generator</h1>
+        <p id="headerInstructions">Welcome! Choose your design options and receive HTML, CSS, and JavaScript code to use.</p>
+        <p id="headerNext"><a id="headerNextLink" href="#">> Let's get started! <</a></p>
+      </header>
+
+      <nav>
+        <ul>
+          <li id="homeLink"><a href="#header">Home</a></li>
+          <li id="aboutLink"><a href="#aboutSection">About</a></li>
+          <li id="templatesLink"><a href="#templatesSection">Templates</a></li>
+          <li id="codeLink"><a href="code.html" target="_blank">Get Code</a></li>
+        </ul>
+      </nav>
+
+      <section id="aboutSection">
+        <h2>About Joy</h2>
+          <img src="images/joy.jpg" /> <address>Joy Hou [<a href="mailto:yuejiao.hou@gmail.com" alt="Email Joy">@</a>] [<a href="https://www.linkedin.com/in/yuejiao-joy-hou-94877014/" target="_blank" alt="LinkedIn" title="opens in new tab">LinkedIn</a>] [<a href="http://github.com/strawbee" target="_blank" alt="GitHub" title="opens in new tab">GitHub</a>]</address>
+          Hi, I'm Joy! I am an adventurer, a dancer, a student, a teacher, and a lover of life. I have enjoyed careers as an attorney and a mortgage loan originator. In my spare time, I salsa dance, hike, practice martial arts, run, play video games, read, write, create, and play. My favorite color is pink, my favorite liquor is tequila, and my favorite book is "The Name of The Wind" by Patrick Rothfuss. I love summer dresses, warm beaches, the touch of sunlight on my skin, fluffy animals, good reads, and pretty pictures. I have a sassy cat named Snowdrop, a rambunctuous dog named Toby, and a usually awesome but sometimes just tolerable husband named Adam.
+      </section>
+
+      <section id="templatesSection">
+        <h2>Templates</h2>
+        <form id="templatesForm">
+          <div id="displayTemplates"></div>
+
+          <div class="pageBottomButtons">
+            <button type="submit" id="applyTemplateButton">Apply Template</button>
+            <button type="button" id="templatesNextButton">Next: Colors</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="colorsSection">
+        <h2 >Colors</h2>
+        <form id="colorsForm">
+          <span class="nowrap colorMargin">
+            <input type="radio" name="colorsRadioButton" id="colorsDefault" /><label for="colorsDefault" class="defaultColor">Default</label>
+          </span>
+
+          <span class="nowrap colorMargin">
+            <input type="radio" name="colorsRadioButton" id="colorsRed" /><label for="colorsRed" class="red">Red</label>
+          </span>
+
+          <span class="nowrap colorMargin">
+            <input type="radio" name="colorsRadioButton" id="colorsOrange" /><label for="colorsOrange" class="orange">Orange</label>
+          </span>
+
+          <span class="nowrap colorMargin">
+            <input type="radio" name="colorsRadioButton" id="colorsYellow" /><label for="colorsYellow" class="yellow">Yellow</label>
+          </span>
+
+          <span class="nowrap colorMargin">
+            <input type="radio" name="colorsRadioButton" id="colorsGreen" /><label for="colorsGreen" class="green">Green</label>
+          </span>
+
+          <span class="nowrap colorMargin">
+            <input type="radio" name="colorsRadioButton" id="colorsBlue" /><label for="colorsBlue" class="blue">Blue</label>
+          </span>
+
+          <span class="nowrap colorMargin">
+            <input type="radio" name="colorsRadioButton" id="colorsPurple" /><label for="colorsPurple" class="purple">Purple</label>
+          </span>
+
+          <div class="pageBottomButtons">
+            <button type="submit" id="applyColorsButton">Apply Colors</button>
+            <button type="button" id="colorsPreviousButton">Back To Templates</button>
+            <button type="button" id="colorsNextButton">Next: Backgrounds</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="backgroundsSection">
+        <h2 id="backgroundsHeader">Backgrounds</h2>
+        <p id="backgroundsInstructions">There is a different background image for each color theme. Adjust your colors to change the image.</p>
+        <form id="backgroundsForm">
+            <input type="radio" name="backgroundsRadioButton" id="backgroundsYes" /><label for="backgroundsYes" class="backgroundsMargin">Use Background Image</label>
+
+            <input type="radio" name="backgroundsRadioButton" id="backgroundsNo" /><label for="backgroundsNo" class="backgroundsMargin">No Background Image</label>
+
+          <div class="pageBottomButtons">
+            <button type="submit" id="applyBackgroundsButton">Apply Background</button>
+            <button type="button" id="backgroundsPreviousButton">Back To Colors</button>
+            <button type="button" id="getCodeButton">Get Code</button>
+          </div>
+        </form>
+      </section>
+
+      <footer>
+        <p>
+          &copy; Joy Hou 2017
+        </p>
+      </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
