@@ -819,7 +819,14 @@ if (firstTwoTemplates) {
       dropdownContent.classList.toggle('show');
     }
 
+    function closeDropdown(event) {
+      if (event.target !== document.getElementsByClassName('mobile')[0] && dropdownContent.classList.contains('show')) {
+        dropdownContent.classList.toggle('show');
+      }
+    }
+
     document.getElementById('dropdown').addEventListener('click', toggleMenu);
+    document.addEventListener('click', closeDropdown);
 
     // Nav Mouseovers
     homeLink.addEventListener('mouseover', function() { this.style.backgroundColor = '${activeTemplate.colors[2]}'; });
