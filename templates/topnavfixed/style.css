@@ -12,7 +12,6 @@ body {
   font-weight: 100;
   color: #FFF;
   letter-spacing: 0.05em;
-  font-size: 16px;
   text-shadow: 1px 1px 4px #057287;
 }
 
@@ -28,8 +27,15 @@ a:hover {
 }
 
 address {
-  font-size: 1.3em;
+  font-size: 1em;
   font-weight: 900;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For iPads & Desktop: */
+  address {
+    font-size: 1.3em;
+  }
 }
 
 #wrapper {
@@ -50,6 +56,7 @@ address {
 nav {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   background: #000;
   text-align: center;
@@ -64,7 +71,6 @@ nav ul {
 }
 
 nav li {
-  display: inline-block;
   padding: 30px 45px;
   background: #000;
   font-size: 1.2em;
@@ -81,9 +87,40 @@ nav li:hover {
   background: #333;
 }
 
+/* Nav for Mobile: */
+
+.mobile:hover {
+  background: #222;
+}
+
+.dropdown-content {
+    display: none;
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For iPads & Desktop: */
+
+  .mobile {
+    display: none;
+  }
+
+  .dropdown-content {
+    display: block;
+  }
+
+  nav li {
+    display: inline-block;
+  }
+}
+
 header {
   display: block;
-  margin: 110px 50px 80px 50px;
+  margin: 110px 0 80px 0;
   padding: 40px;
   line-height: 2em;
   text-align: center;
@@ -92,7 +129,8 @@ header {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
+  line-height: 1em;
   font-weight: 900;
   padding: 10px 30px 30px 30px;
   animation-name: h1-animation;
@@ -101,13 +139,25 @@ h1 {
   white-space: nowrap;
 }
 
-h1:hover {
-  transform: translate(10px, 0);
-}
+@media only screen and (min-width: 768px) {
+  /* For iPads & Desktop: */
+  header {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
 
-@keyframes h1-animation {
-  from { opacity: 0; margin-right: 500px; }
-  to { opacity: 1; margin-right: 0; }
+  h1 {
+    font-size: 3em;
+  }
+
+  h1:hover {
+    transform: translate(10px, 0);
+  }
+
+  @keyframes h1-animation {
+    from { opacity: 0; margin-right: 500px; }
+    to { opacity: 1; margin-right: 0; }
+  }
 }
 
 header p a:hover {
@@ -122,7 +172,7 @@ header #headerNext {
 
 section {
   position: relative;
-  margin: 110px 50px 80px 50px;
+  margin: 110px 0 80px 0;
   padding: 40px 50px;
   line-height: 2em;
   overflow: auto;
@@ -131,7 +181,8 @@ section {
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 2em;
+  line-height: 1em;
   font-weight: 900;
   text-align: center;
   padding-bottom: 40px;
@@ -140,13 +191,25 @@ h2 {
   transition: transform 1s;
 }
 
-@keyframes h2-animation {
-  from { margin-left: 500px; opacity: 0; }
-  to { margin-left: 0px; opacity: 1; }
-}
+@media only screen and (min-width: 768px) {
+  /* For iPads & Desktop: */
+  section {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
 
-h2:hover {
-  transform: translate(10px, 0);
+  h2 {
+    font-size: 3em;
+  }
+
+  @keyframes h2-animation {
+    from { margin-left: 500px; opacity: 0; }
+    to { margin-left: 0px; opacity: 1; }
+  }
+
+  h2:hover {
+    transform: translate(10px, 0);
+  }
 }
 
 img {
@@ -172,8 +235,17 @@ img:hover {
   box-shadow: 2px 2px 2px #000;
 }
 
+#displayTemplates {
+  text-align: center;
+}
+
+.templateWidth {
+  display: inline-block;
+  width: 270px;
+}
+
 button {
-  margin: 30px 10px 10px 10px;
+  margin: 10px;
   padding: 20px;
   font-size: 1.2em;
   border-radius: 10px;
@@ -195,7 +267,15 @@ button:focus {
 }
 
 .pageBottomButtons {
-  text-align: right;
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For iPads & Desktop: */
+  .pageBottomButtons {
+    text-align: right;
+  }
 }
 
 #templatesSection #templatesNextButton {
@@ -206,8 +286,13 @@ button:focus {
   margin: 30px 10px 30px 0;
 }
 
-#colorsSection label, #backgroundsSection label {
+#colorsSection label {
   font-size: 1.4em;
+  vertical-align: middle;
+}
+
+#backgroundsSection label {
+  font-size: 1.2em;
   vertical-align: middle;
 }
 
@@ -280,6 +365,7 @@ input:focus {
 footer {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   background: #000;
   text-align: center;
@@ -302,6 +388,11 @@ footer:hover {
 
 #backgroundsInstructions {
   text-align: center;
+}
+
+.bgWidth {
+  display: inline-block;
+  width: 300px;
 }
 
 .nowrap {

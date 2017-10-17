@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Layout Generator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css" \>
     <link rel="stylesheet" href="templates/topnavfixed/style.css" \>
   </head>
@@ -13,12 +15,15 @@
         <p id="headerNext"><a id="headerNextLink" href="#">> Let's get started! <</a></p>
       </header>
 
-      <nav>
-        <ul>
-          <li id="homeLink"><a href="#header">Home</a></li>
-          <li id="aboutLink"><a href="#aboutSection">About</a></li>
-          <li id="templatesLink"><a href="#templatesSection">Templates</a></li>
-          <li id="codeLink"><a href="code.html" target="_blank">Get Code</a></li>
+    <nav>
+        <ul class="dropdown">
+          <li class="mobile">Menu</li>
+          <div class="dropdown-content">
+            <li id="homeLink"><a href="#header">Home</a></li>
+            <li id="aboutLink"><a href="#aboutSection">About</a></li>
+            <li id="templatesLink"><a href="#templatesSection">Templates</a></li>
+            <li id="codeLink"><a href="code.html" target="_blank">Get Code</a></li>
+          </div>
         </ul>
       </nav>
 
@@ -83,10 +88,12 @@
         <h2 id="backgroundsHeader">Backgrounds</h2>
         <p id="backgroundsInstructions">There is a different background image for each color theme. Adjust your colors to change the image.</p>
         <form id="backgroundsForm">
+          <span class="bgWidth">
             <input type="radio" name="backgroundsRadioButton" id="backgroundsYes" /><label for="backgroundsYes" class="backgroundsMargin">Use Background Image</label>
-
+          </span>
+          <span class="bgWidth">
             <input type="radio" name="backgroundsRadioButton" id="backgroundsNo" /><label for="backgroundsNo" class="backgroundsMargin">No Background Image</label>
-
+          </span>
           <div class="pageBottomButtons">
             <button type="submit" id="applyBackgroundsButton">Apply Background</button>
             <button type="button" id="backgroundsPreviousButton">Back To Colors</button>

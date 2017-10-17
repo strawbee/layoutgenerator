@@ -267,7 +267,7 @@ if (localStorage.colorStored === 'true') {
 
 // Generates and displays templates
 for (var x = 0; x < Templates.all.length; x++) {
-  document.getElementById('displayTemplates').innerHTML += '<span class="nowrap"><input type="radio" name="templatesRadioButton" id="templates' + x + '" /><img id="template' + x + 'Image" src="' + Templates.all[x].screenshot + '" /></span>';
+  document.getElementById('displayTemplates').innerHTML += '<span class="templateWidth"><input type="radio" name="templatesRadioButton" id="templates' + x + '" /><img id="template' + x + 'Image" src="' + Templates.all[x].screenshot + '" /></span>';
 }
 
 // Checks template and marks the active radio button on the web page

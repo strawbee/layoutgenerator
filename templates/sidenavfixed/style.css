@@ -28,8 +28,15 @@ a:hover {
 }
 
 address {
-  font-size: 1.3em;
+  font-size: 1em;
   font-weight: 900;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For iPads & Desktop: */
+  address {
+    font-size: 1.3em;
+  }
 }
 
 #wrapper {
@@ -51,25 +58,22 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 260px;
+  width: 100%;
   background: #000;
   text-align: center;
   box-shadow: 0 3px 1px #222;
   z-index: 2;
 }
 
+
 nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 nav li {
-  padding: 30px 80px;
+  padding: 30px 45px;
   background: #000;
   font-size: 1.2em;
   text-shadow: 2px 2px 2px #333;
@@ -78,25 +82,68 @@ nav li {
 
 nav li:hover {
   background: #057287;
-  cursor: auto;
+  cursor: default;
 }
 
 #homeLink {
   background: #333;
 }
 
+/* Nav for Mobile: */
+
+.mobile:hover {
+  background: #222;
+}
+
+.dropdown-content {
+    display: none;
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For iPads & Desktop: */
+
+  .mobile {
+    display: none;
+  }
+
+  .dropdown-content {
+    display: block;
+  }
+
+  nav {
+    width: 260px;
+    height: 100%;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  nav li {
+    padding: 30px 80px;
+  }
+}
+
 header {
   display: block;
-  margin: 30px 30px 30px 290px;
-  padding: 30px;
+  margin: 110px 0 80px 0;
+  padding: 40px;
   line-height: 2em;
   text-align: center;
   cursor: default;
-  overflow: default;
+  overflow: auto;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
+  line-height: 1em;
   font-weight: 900;
   padding: 10px 30px 30px 30px;
   animation-name: h1-animation;
@@ -105,13 +152,26 @@ h1 {
   white-space: nowrap;
 }
 
-h1:hover {
-  transform: translate(10px, 0);
-}
+@media only screen and (min-width: 768px) {
+  /* For iPads & Desktop: */
 
-@keyframes h1-animation {
-  from { opacity: 0; margin-right: 500px; }
-  to { opacity: 1; margin-right: 0; }
+  header {
+    margin: 30px 30px 30px 290px;
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h1:hover {
+    transform: translate(10px, 0);
+  }
+
+  @keyframes h1-animation {
+    from { opacity: 0; margin-right: 500px; }
+    to { opacity: 1; margin-right: 0; }
+  }
 }
 
 header p a:hover {
@@ -126,8 +186,8 @@ header #headerNext {
 
 section {
   position: relative;
-  margin: 30px 30px 30px 290px;
-  padding: 30px;
+  margin: 110px 0 80px 0;
+  padding: 40px 50px;
   line-height: 2em;
   overflow: auto;
   border-radius: 20px;
@@ -135,22 +195,36 @@ section {
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 2em;
+  line-height: 1em;
   font-weight: 900;
   text-align: center;
-  padding: 10px 0 40px 0;
+  padding-bottom: 40px;
   animation-name: h2-animation;
   animation-duration: 2.5s;
   transition: transform 1s;
 }
 
-@keyframes h2-animation {
-  from { margin-left: 500px; opacity: 0; }
-  to { margin-left: 0px; opacity: 1; }
-}
+@media only screen and (min-width: 768px) {
+  /* For iPads & Desktop: */
 
-h2:hover {
-  transform: translate(10px, 0);
+  section {
+    margin: 30px 30px 30px 290px;
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 3em;
+  }
+
+  @keyframes h2-animation {
+    from { margin-left: 500px; opacity: 0; }
+    to { margin-left: 0px; opacity: 1; }
+  }
+
+  h2:hover {
+    transform: translate(10px, 0);
+  }
 }
 
 img {
@@ -176,8 +250,17 @@ img:hover {
   box-shadow: 2px 2px 2px #000;
 }
 
+#displayTemplates {
+  text-align: center;
+}
+
+.templateWidth {
+  display: inline-block;
+  width: 270px;
+}
+
 button {
-  margin: 30px 10px 10px 10px;
+  margin: 10px;
   padding: 20px;
   font-size: 1.2em;
   border-radius: 10px;
@@ -199,7 +282,15 @@ button:focus {
 }
 
 .pageBottomButtons {
-  text-align: right;
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For iPads & Desktop: */
+  .pageBottomButtons {
+    text-align: right;
+  }
 }
 
 #templatesSection #templatesNextButton {
@@ -210,8 +301,13 @@ button:focus {
   margin: 30px 10px 30px 0;
 }
 
-#colorsSection label, #backgroundsSection label {
+#colorsSection label {
   font-size: 1.4em;
+  vertical-align: middle;
+}
+
+#backgroundsSection label {
+  font-size: 1.2em;
   vertical-align: middle;
 }
 
@@ -285,21 +381,32 @@ input:focus {
 footer {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   background: #222;
   text-align: center;
   color: #fff;
   text-shadow: 1px 1px 1px #333;
   box-shadow: 0 -1px 2px #333;
-  padding: 20px 20px 20px 310px;
+  padding: 20px;
   z-index: 1;
-  opacity: 0;
   transition: opacity 1s;
 }
 
 footer:hover {
   cursor: default;
-  opacity: 1;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For iPads & Desktop: */
+  footer {
+    padding: 20px 20px 20px 310px;
+    opacity: 0;
+  }
+
+  footer:hover {
+    opacity: 1;
+  }
 }
 
 #templatesSection, #aboutSection, #colorsSection, #backgroundsSection {
@@ -308,6 +415,11 @@ footer:hover {
 
 #backgroundsInstructions {
   text-align: center;
+}
+
+.bgWidth {
+  display: inline-block;
+  width: 300px;
 }
 
 .nowrap {
