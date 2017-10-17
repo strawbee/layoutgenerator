@@ -6,10 +6,9 @@ I am branching off of that with my individual content contributions and improvin
 
 
 ##### To Do
-x refactored JavaScript
-x Responsive design-ize everything
-
+* ~~refactored JavaScript~~
+* ~~Responsive design-ize everything~~
+* ~~Safari local storage fix~~
+* ~~Cross browser compatibility~~ kind of. Latest versions of all major browsers work now except IE, which is completely fucked.
 * Put code output in a modal window instead
-* Cross browser compatibility
-* Safari local storage fix
 * More templates

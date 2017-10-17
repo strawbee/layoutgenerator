@@ -83,7 +83,7 @@ function applyTemplates(event) {
       stylesheets[1].href = Templates.all[radio].stylesheet;
       localStorage['template'] = JSON.stringify(Templates.all[radio]);
       localStorage.templateStored = 'true';
-      //window.location.reload('true');
+      window.location.reload('true');
     }
   }
 }
@@ -254,18 +254,6 @@ function backgroundsPrevious() {
 
 /* =============================== STUFF THAT HAPPENS WHEN PAGE LOADS =============================== */
 
-// Checks colors and backgrounds
-if (localStorage.colorStored === 'true') {
-  activeColors = JSON.parse(localStorage['colors']);
-  activeBackground = localStorage['background'];
-  changeColor(activeColors);
-  checkBackground();
-} else {
-  activeColors = Templates.all[0].colors[0];
-  activeBackground = Templates.all[0].backgrounds[0];
-  checkBackground();
-}
-
 // Generates and displays templates
 for (var x = 0; x < Templates.all.length; x++) {
   document.getElementById('displayTemplates').innerHTML += '<span class="templateWidth"><input type="radio" name="templatesRadioButton" id="templates' + x + '" /><img id="template' + x + 'Image" src="' + Templates.all[x].screenshot + '" /></span>';
@@ -300,10 +288,23 @@ else if (localStorage.startAtTemplate === 'false') {
 
 var firstTwoTemplates = activeTemplate.name === Templates.all[0].name || Templates.all[1].name;
 
+// Checks colors and backgrounds
+if (localStorage.colorStored === 'true') {
+  activeColors = JSON.parse(localStorage['colors']);
+  activeBackground = localStorage['background'];
+  changeColor(activeColors);
+  checkBackground();
+} else {
+  activeColors = Templates.all[0].colors[0];
+  activeBackground = Templates.all[0].backgrounds[0];
+  checkBackground();
+}
+
 /* ==================================== EVENT LISTENERS + ==================================== */
 
 // For troubleshooting JS on mobile
-document.getElementById('clearLocalStorage').addEventListener('click', function() { localStorage.clear(); });
+document.getElementById('clearLocalStorage').addEventListener('click', function() { localStorage.clear(); document.getElementById('localStorageCleared').textContent = 'Your local storage has been cleared.'; });
+document.getElementById('refreshPage').addEventListener('click', function() { window.location.reload('true'); });
 
 // Navigation Event Listeners
 homeLink.addEventListener('click', goHome);

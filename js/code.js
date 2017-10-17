@@ -462,6 +462,7 @@ else if (activeTemplate.name === allTemplates[1].name) {
     background: #000;
     text-align: center;
     box-shadow: 0 3px 1px #222;
+    overflow: hidden;
     z-index: 2;
   }
 
