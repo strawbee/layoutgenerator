@@ -144,7 +144,6 @@ header {
   line-height: 2em;
   text-align: left;
   cursor: default;
-  white-space: normal;
   overflow: auto;
 }
 
@@ -209,7 +208,6 @@ section {
   line-height: 2em;
   overflow: auto;
   border-radius: 20px;
-  white-space: normal;
   opacity: 1.0;
 }
 
@@ -464,4 +462,10 @@ footer:hover {
     from { margin-top: -100%; }
     to { margin-top: 110px; }
   }
+}
+
+/* IE Flex Fix */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+   header { width: 100%; }
+   section { width: 100%; }
 }
