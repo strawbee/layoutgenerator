@@ -299,7 +299,7 @@ else if (localStorage.startAtTemplate === 'false') {
 
 var firstTwoTemplates = activeTemplate.name === Templates.all[0].name || Templates.all[1].name;
 
-/* ==================================== EVENT LISTENERS ==================================== */
+/* ==================================== EVENT LISTENERS + ==================================== */
 
 // Navigation Event Listeners
 homeLink.addEventListener('click', goHome);
@@ -311,6 +311,30 @@ document.getElementById('colorsPreviousButton').addEventListener('click', colors
 document.getElementById('colorsNextButton').addEventListener('click', colorsNext);
 document.getElementById('backgroundsPreviousButton').addEventListener('click', backgroundsPrevious);
 document.getElementById('getCodeButton').addEventListener('click', function() { window.open('code.html', '_blank'); });
+
+// Menu Toggle for mobile
+var dropdownContent = document.getElementById('dropdownContent');
+
+function toggleMenu() {
+  if (dropdownContent.style.display === 'none') {
+    dropdownContent.style.display = 'block';
+  } else {
+    dropdownContent.style.display = 'none';
+  }
+};
+
+function checkSize() {
+  const mq = window.matchMedia( "(min-width: 768px)" );
+  if (mq.matches) {
+    dropdownContent.style.display = 'block';
+  }
+  else {
+    dropdownContent.style.display = 'none';
+  }
+}
+
+document.getElementById('dropdown').addEventListener('click', toggleMenu);
+window.addEventListener('resize', checkSize);
 
 // Apply Templates Event Listener
 document.getElementById('templatesForm').addEventListener('submit', applyTemplates);

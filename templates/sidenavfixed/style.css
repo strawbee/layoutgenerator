@@ -95,9 +95,12 @@ nav li {
   transition: background 1s;
 }
 
+nav ul:hover {
+  cursor: context-menu;
+}
+
 nav li:hover {
   background: #057287;
-  cursor: default;
 }
 
 #homeLink {
@@ -110,12 +113,12 @@ nav li:hover {
   background: #222;
 }
 
-.dropdown-content {
+#dropdownContent {
     display: none;
     z-index: 100;
 }
 
-.dropdown:hover .dropdown-content {
+#dropdown:hover #dropdownContent {
     display: block;
 }
 
@@ -126,7 +129,7 @@ nav li:hover {
     display: none;
   }
 
-  .dropdown-content {
+  #dropdownContent {
     display: block;
   }
 
