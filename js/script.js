@@ -253,16 +253,8 @@ function backgroundsPrevious() {
 
 /* =============================== STUFF THAT HAPPENS WHEN PAGE LOADS =============================== */
 
-if (localStorage.templateStored === 'true') {
-  activeTemplate = JSON.parse(localStorage['template']);
-  stylesheets[1].href = activeTemplate.stylesheet;
-} else {
-  activeTemplate = Templates.all[0];
-}
-
-var firstTwoTemplates = activeTemplate.name === Templates.all[0].name || Templates.all[1].name;
-
-if (localStorage.colorStored) {
+// Checks colors and backgrounds
+if (localStorage.colorStored === 'true') {
   activeColors = JSON.parse(localStorage['colors']);
   activeBackground = localStorage['background'];
   changeColor(activeColors);
@@ -273,12 +265,30 @@ if (localStorage.colorStored) {
   checkBackground();
 }
 
+// Generates and displays templates
+for (var x = 0; x < Templates.all.length; x++) {
+  document.getElementById('displayTemplates').innerHTML += '<span class="nowrap"><input type="radio" name="templatesRadioButton" id="templates' + x + '" /><img id="template' + x + 'Image" src="' + Templates.all[x].screenshot + '" /></span>';
+}
+
+// Checks template and marks the active radio button on the web page
+if (localStorage.templateStored === 'true') {
+  activeTemplate = JSON.parse(localStorage['template']);
+  stylesheets[1].href = activeTemplate.stylesheet;
+  for (var y = 0; y < Templates.all.length; y++) {
+    if (activeTemplate.name === Templates.all[y].name) { possibleTemplates[y].checked = true; }
+  }
+} else {
+  activeTemplate = Templates.all[0];
+  possibleTemplates[0].checked = true;
+}
+
+// Checks if home page or template page should display
 if (localStorage.startAtTemplate === 'true') {
   if (activeTemplate.multipage === true) {
     header.style.display = 'none';
     templatesSection.style.display = 'block';
-    localStorage.startAtTemplate = false;
   }
+  localStorage.startAtTemplate = false;
 }
 else if (localStorage.startAtTemplate === 'false') {
   if (activeTemplate.multipage === true) {
@@ -287,10 +297,7 @@ else if (localStorage.startAtTemplate === 'false') {
   }
 }
 
-// Generates Templates
-for (var x = 0; x < Templates.all.length; x++) {
-  document.getElementById('displayTemplates').innerHTML += '<span class="nowrap"><input type="radio" name="templatesRadioButton" id="templates' + x + '" /><img id="template' + x + 'Image" src="' + Templates.all[x].screenshot + '" /></span>';
-}
+var firstTwoTemplates = activeTemplate.name === Templates.all[0].name || Templates.all[1].name;
 
 /* ==================================== EVENT LISTENERS ==================================== */
 
