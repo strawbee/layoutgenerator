@@ -11,6 +11,7 @@ var templatesLink = document.getElementById('templatesLink');
 var wrapper = document.getElementById('wrapper');
 var section = document.querySelectorAll('section');
 var stylesheets = document.querySelectorAll('link');
+var dropdownContent = document.getElementById('dropdownContent');
 var activeTemplate, activeColors, activeBackground;
 
 Templates.all = [];
@@ -313,8 +314,6 @@ document.getElementById('backgroundsPreviousButton').addEventListener('click', b
 document.getElementById('getCodeButton').addEventListener('click', function() { window.open('code.html', '_blank'); });
 
 // Menu Toggle for mobile
-var dropdownContent = document.getElementById('dropdownContent');
-
 function toggleMenu() {
   if (dropdownContent.style.display === 'none') {
     dropdownContent.style.display = 'block';
