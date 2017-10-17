@@ -315,31 +315,32 @@ document.getElementById('getCodeButton').addEventListener('click', function() { 
 
 // Menu Toggle for mobile
 
-var mq = window.matchMedia( '(min-width: 768px)' );
+// var mq = window.matchMedia( '(min-width: 768px)' );
 
 function toggleMenu() {
-  if (mq.matches) {
-    dropdownContent.style.display = 'block';
-  } else {
-    if (dropdownContent.style.display === 'none') {
-      dropdownContent.style.display = 'block';
-    } else {
-      dropdownContent.style.display = 'none';
-    }
-  }
-};
-
-function checkSize() {
-  if (mq.matches) {
-    dropdownContent.style.display = 'block';
-  }
-  else {
-    dropdownContent.style.display = 'none';
-  }
+  dropdownContent.classList.toggle('show');
+  // if (mq.matches) {
+  //   dropdownContent.style.display = 'block';
+  // } else {
+  //   if (dropdownContent.style.display === 'none') {
+  //     dropdownContent.style.display = 'block';
+  //   } else {
+  //     dropdownContent.style.display = 'none';
+  //   }
+  // }
 }
 
+// function checkSize() {
+//   if (mq.matches) {
+//     dropdownContent.style.display = 'block';
+//   }
+//   else {
+//     dropdownContent.style.display = 'none';
+//   }
+// }
+
 document.getElementById('dropdown').addEventListener('click', toggleMenu);
-window.addEventListener('resize', checkSize);
+// window.addEventListener('resize', checkSize);
 
 // Apply Templates Event Listener
 document.getElementById('templatesForm').addEventListener('submit', applyTemplates);
