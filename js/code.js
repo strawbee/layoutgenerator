@@ -185,7 +185,7 @@ if (activeTemplate.name === allTemplates[0].name) {
 
   header {
     display: block;
-    margin: 80px 0;
+    margin: 100px 0 80px 0;
     padding: 10px;
     line-height: 2em;
     text-align: left;
@@ -247,7 +247,7 @@ if (activeTemplate.name === allTemplates[0].name) {
 
   section {
     position: relative;
-    margin: 80px 0;
+    margin: 100px 0 80px 0;
     padding: 10px;
     line-height: 2em;
     overflow: auto;
@@ -272,7 +272,7 @@ if (activeTemplate.name === allTemplates[0].name) {
     /* For larger than really, really tiny mobile screens: */
 
     section {
-      margin: 80px 0;
+      margin: 110px 0 80px 0;
       padding: 20px 50px;
     }
   }
@@ -375,14 +375,14 @@ if (activeTemplate.name === allTemplates[0].name) {
 
   @keyframes slide-down {
     from { margin-top: -100%; }
-    to { margin-top: 80px; }
+    to { margin-top: 100px; }
   }
 
   @media only screen and (min-width: 420px) {
     /* For iPads & Desktop & Larger Mobiles: */
     @keyframes slide-down {
       from { margin-top: -100%; }
-      to { margin-top: 80px; }
+      to { margin-top: 110px; }
     }
   }
   `;
@@ -531,7 +531,7 @@ else if (activeTemplate.name === allTemplates[1].name) {
 
   header {
     display: block;
-    margin: 80px 0;
+    margin: 100px 0 80px 0;
     padding: 10px;
     line-height: 2em;
     text-align: left;
@@ -555,7 +555,7 @@ else if (activeTemplate.name === allTemplates[1].name) {
     /* For larger than really, really tiny mobile screens: */
 
     header {
-      padding: 40px;
+      padding: 20px 40px;
     }
   }
 
@@ -593,7 +593,7 @@ else if (activeTemplate.name === allTemplates[1].name) {
 
   section {
     position: relative;
-    margin: 50px 0;
+    margin: 100px 0 80px 0;
     padding: 10px;
     line-height: 2em;
     overflow: auto;
@@ -618,7 +618,7 @@ else if (activeTemplate.name === allTemplates[1].name) {
     /* For larger than really, really tiny mobile screens: */
 
     section {
-      padding: 40px 50px;
+      padding: 20px 50px;
     }
   }
 
@@ -732,7 +732,7 @@ else if (activeTemplate.name === allTemplates[1].name) {
 
   @keyframes slide-down {
     from { margin-top: -100%; }
-    to { margin-top: 50px; }
+    to { margin-top: 100px; }
   }
 
   @media only screen and (min-width: 768px) {
