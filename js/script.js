@@ -332,7 +332,7 @@ function checkSize() {
   }
 }
 
-document.getElementById('dropdown').addEventListener('click', toggleMenu);
+document.getElementById('mobileMenu').addEventListener('click', toggleMenu);
 window.addEventListener('resize', checkSize);
 
 // Apply Templates Event Listener
