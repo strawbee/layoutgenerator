@@ -6,7 +6,7 @@ For more information on HTML5 Local Storage:
 Go to Settings (under Chrome -> Preferences, or click the three vertical dots at the top-right of your browser window, then go to Settings in the drop down menu) -> Scroll down to the bottom of the page and select Advanced -> Privacy and Security -> Content Settings -> Cookies -> Make sure "Allow sites to save and read cookie data" is enabled.
 
 ## Firefox
-type "about:config" in the address bar. There might be a warning about accepting the risks of changing advanced settings; go ahead and accept it. In the new search bar, search for "dom.storage.enabled" and make sure that the value is set to true. If it's not set to true, right click and toggle it to true.
+Type "about:config" in the address bar. There might be a warning about accepting the risks of changing advanced settings; go ahead and accept it. In the new search bar, search for "dom.storage.enabled" and make sure that the value is set to true. If it's not set to true, right click and toggle it to true.
 
 ## Safari
 Go to Preferences (under Safari > Preferences) -> Privacy -> Cookies and website data -> Make sure "Always allow" is selected.
