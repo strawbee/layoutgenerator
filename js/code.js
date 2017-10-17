@@ -69,8 +69,23 @@ if (activeTemplate.name === allTemplates[0].name) {
     font-weight: 100;
     color: #FFF;
     letter-spacing: 0.05em;
-    font-size: 16px;
-    text-shadow: 1px 1px 4px ${activeTemplate.colors[2]};
+    font-size: 0.8em;
+    text-shadow: 1px 1px 4px #057287;
+    overflow-x: hidden;
+  }
+
+  @media only screen and (min-width: 340px) {
+    /* For more than really, really tiny screens */
+    body {
+      font-size: 0.9em;
+    }
+  }
+
+  @media only screen and (min-width: 420px) {
+    /* For more than really tiny screens */
+    body {
+      font-size: 16px;
+    }
   }
 
   a {
@@ -94,7 +109,7 @@ if (activeTemplate.name === allTemplates[0].name) {
     left: 0;
     min-height: 100vh;
     min-width: 100vw;
-    background: ${activeBackground};
+    background: linear-gradient(#4ec3d8, #07a4c1) fixed;
     background-attachment: fixed;
     background-size: cover;
     display: flex;
@@ -107,6 +122,7 @@ if (activeTemplate.name === allTemplates[0].name) {
   nav {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     background: #000;
     text-align: center;
@@ -121,7 +137,6 @@ if (activeTemplate.name === allTemplates[0].name) {
   }
 
   nav li {
-    display: inline-block;
     padding: 30px 45px;
     background: #000;
     font-size: 1.2em;
@@ -130,14 +145,48 @@ if (activeTemplate.name === allTemplates[0].name) {
   }
 
   nav li:hover {
-    background: ${activeTemplate.colors[2]};
-    cursor: auto;
+    background: #057287
+  }
+
+  nav ul:hover {
+    cursor: default;
+  }
+
+  /* Nav for Mobile: */
+
+  .mobile:hover {
+    background: #222;
+  }
+
+  .dropdown-content {
+      display: none;
+      z-index: 100;
+  }
+
+  .dropdown:hover .dropdown-content {
+      display: block;
+  }
+
+  @media only screen and (min-width: 768px) {
+    /* For iPads & Desktop: */
+
+    .mobile {
+      display: none;
+    }
+
+    .dropdown-content {
+      display: block;
+    }
+
+    nav li {
+      display: inline-block;
+    }
   }
 
   header {
     display: block;
-    margin: 110px 50px 80px 50px;
-    padding: 40px;
+    margin: 80px 0;
+    padding: 10px;
     line-height: 2em;
     text-align: center;
     cursor: default;
@@ -145,7 +194,8 @@ if (activeTemplate.name === allTemplates[0].name) {
   }
 
   h1 {
-    font-size: 3em;
+    font-size: 2em;
+    line-height: 1em;
     font-weight: 900;
     padding: 10px 30px 30px 30px;
     animation-name: h1-animation;
@@ -154,13 +204,35 @@ if (activeTemplate.name === allTemplates[0].name) {
     white-space: nowrap;
   }
 
-  h1:hover {
-    transform: translate(10px, 0);
+  @media only screen and (min-width: 420px) {
+    /* For larger than really, really tiny mobile screens: */
+
+    header {
+      margin: 80px 0;
+      padding: 20px 40px;
+    }
   }
 
-  @keyframes h1-animation {
-    from { opacity: 0; margin-right: 500px; }
-    to { opacity: 1; margin-right: 0; }
+  @media only screen and (min-width: 768px) {
+    /* For iPads & Desktop: */
+
+    header {
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+    h1 {
+      font-size: 3em;
+    }
+
+    h1:hover {
+      transform: translate(10px, 0);
+    }
+
+    @keyframes h1-animation {
+      from { opacity: 0; margin-right: 500px; }
+      to { opacity: 1; margin-right: 0; }
+    }
   }
 
   header p {
@@ -173,33 +245,55 @@ if (activeTemplate.name === allTemplates[0].name) {
 
   section {
     position: relative;
-    margin: 110px 50px 80px 50px;
-    padding: 40px 50px;
+    margin: 80px 0;
+    padding: 10px;
     line-height: 2em;
     overflow: auto;
     border-radius: 20px;
+    text-align: justify;
     opacity: ${backgroundOpacity};
     background: ${sectionBackground};
-    text-align: justify;
   }
 
   h2 {
-    font-size: 3em;
+    font-size: 2em;
+    line-height: 1em;
     font-weight: 900;
     text-align: center;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
     animation-name: h2-animation;
     animation-duration: 2.5s;
     transition: transform 1s;
   }
 
-  @keyframes h2-animation {
-    from { margin-left: 500px; opacity: 0; }
-    to { margin-left: 0px; opacity: 1; }
+  @media only screen and (min-width: 420px) {
+    /* For larger than really, really tiny mobile screens: */
+
+    section {
+      margin: 80px 0;
+      padding: 20px 50px;
+    }
   }
 
-  h2:hover {
-    transform: translate(10px, 0);
+  @media only screen and (min-width: 768px) {
+    /* For iPads & Desktop: */
+    section {
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+    h2 {
+      font-size: 3em;
+    }
+
+    @keyframes h2-animation {
+      from { margin-left: 500px; opacity: 0; }
+      to { margin-left: 0px; opacity: 1; }
+    }
+
+    h2:hover {
+      transform: translate(10px, 0);
+    }
   }
 
   img {
@@ -251,13 +345,15 @@ if (activeTemplate.name === allTemplates[0].name) {
   footer {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     background: #000;
     text-align: center;
     color: #8c8c8c;
     text-shadow: 1px 1px 1px #333;
     box-shadow: 0 -2px 1px #333;
-    padding: 20px;
+    padding: 5px;
+    height: 60px;
     z-index: 1;
     transition: color 1s;
   }
@@ -277,7 +373,15 @@ if (activeTemplate.name === allTemplates[0].name) {
 
   @keyframes slide-down {
     from { margin-top: -100%; }
-    to { margin-top: 110px; }
+    to { margin-top: 80px; }
+  }
+
+  @media only screen and (min-width: 420px) {
+    /* For iPads & Desktop & Larger Mobiles: */
+    @keyframes slide-down {
+      from { margin-top: -100%; }
+      to { margin-top: 80px; }
+    }
   }
   `;
 }
@@ -297,8 +401,24 @@ else if (activeTemplate.name === allTemplates[1].name) {
     font-weight: 100;
     color: #FFF;
     letter-spacing: 0.05em;
+    font-size: 0.8em;
     font-size: 16px;
     text-shadow: 1px 1px 4px ${activeTemplate.colors[2]};
+    overflow-x: hidden;
+  }
+
+  @media only screen and (min-width: 340px) {
+    /* For more than really, really tiny screens */
+    body {
+      font-size: 0.9em;
+    }
+  }
+
+  @media only screen and (min-width: 420px) {
+    /* For more than really tiny screens */
+    body {
+      font-size: 16px;
+    }
   }
 
   a {
@@ -336,8 +456,7 @@ else if (activeTemplate.name === allTemplates[1].name) {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 260px;
+    width: 100%;
     background: #000;
     text-align: center;
     box-shadow: 0 3px 1px #222;
@@ -348,28 +467,70 @@ else if (activeTemplate.name === allTemplates[1].name) {
     margin: 0;
     padding: 0;
     list-style: none;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
   }
 
   nav li {
-    padding: 30px 71px;
+    padding: 30px 45px;
     background: #000;
     font-size: 1.2em;
     text-shadow: 2px 2px 2px #333;
     transition: background 1s;
   }
 
+  nav ul:hover {
+    cursor: default;
+  }
+
   nav li:hover {
     background: ${activeTemplate.colors[2]};
-    cursor: auto;
+  }
+
+  /* Nav for Mobile: */
+
+  .mobile:hover {
+    background: #222;
+  }
+
+  .dropdown-content {
+      display: none;
+      z-index: 100;
+  }
+
+  .dropdown:hover .dropdown-content {
+      display: block;
+  }
+
+  @media only screen and (min-width: 768px) {
+    /* For iPads & Desktop: */
+
+    .mobile {
+      display: none;
+    }
+
+    .dropdown-content {
+      display: block;
+    }
+
+    nav {
+      width: 260px;
+      height: 100%;
+    }
+
+    nav ul {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    nav li {
+      padding: 30px 80px;
+    }
   }
 
   header {
     display: block;
-    margin: 30px 30px 30px 290px;
-    padding: 30px;
+    margin: 50px 0;
+    padding: 10px;
     line-height: 2em;
     text-align: center;
     cursor: default;
@@ -377,25 +538,49 @@ else if (activeTemplate.name === allTemplates[1].name) {
   }
 
   h1 {
-    font-size: 3em;
+    font-size: 2em;
+    line-height: 1em;
     font-weight: 900;
-    padding: 10px 30px 30px 30px;
+    padding: 10px 30px;
     animation-name: h1-animation;
     animation-duration: 3s;
     transition: transform 1s;
     white-space: nowrap;
   }
 
-  h1:hover {
-    transform: translate(10px, 0);
+  @media only screen and (min-width: 420px) {
+    /* For larger than really, really tiny mobile screens: */
+
+    header {
+      margin: 80px 0;
+      padding: 40px;
+    }
   }
 
-  @keyframes h1-animation {
-    from { opacity: 0; margin-right: 500px; }
-    to { opacity: 1; margin-right: 0; }
+  @media only screen and (min-width: 768px) {
+    /* For iPads & Desktop: */
+
+    header {
+      margin: 0 30px 30px 290px;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 3em;
+    }
+
+    h1:hover {
+      transform: translate(10px, 0);
+    }
+
+    @keyframes h1-animation {
+      from { opacity: 0; margin-right: 500px; }
+      to { opacity: 1; margin-right: 0; }
+    }
   }
 
   header p {
+    text-shadow: 2px 2px 3px #057287;
     margin: 20px;
   }
 
@@ -405,8 +590,8 @@ else if (activeTemplate.name === allTemplates[1].name) {
 
   section {
     position: relative;
-    margin: 30px 30px 30px 290px;
-    padding: 30px;
+    margin: 50px 0;
+    padding: 10px;
     line-height: 2em;
     overflow: auto;
     border-radius: 20px;
@@ -416,22 +601,44 @@ else if (activeTemplate.name === allTemplates[1].name) {
   }
 
   h2 {
-    font-size: 3em;
+    font-size: 2em;
+    line-height: 1em;
     font-weight: 900;
     text-align: center;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
     animation-name: h2-animation;
     animation-duration: 2.5s;
     transition: transform 1s;
   }
 
-  @keyframes h2-animation {
-    from { margin-left: 500px; opacity: 0; }
-    to { margin-left: 0px; opacity: 1; }
+  @media only screen and (min-width: 420px) {
+    /* For larger than really, really tiny mobile screens: */
+
+    section {
+      padding: 40px 50px;
+    }
   }
 
-  h2:hover {
-    transform: translate(10px, 0);
+  @media only screen and (min-width: 768px) {
+    /* For iPads & Desktop: */
+
+    section {
+      margin: 0 30px 30px 290px;
+      padding: 30px;
+    }
+
+    h2 {
+      font-size: 3em;
+    }
+
+    @keyframes h2-animation {
+      from { margin-left: 500px; opacity: 0; }
+      to { margin-left: 0px; opacity: 1; }
+    }
+
+    h2:hover {
+      transform: translate(10px, 0);
+    }
   }
 
   img {
@@ -482,22 +689,34 @@ else if (activeTemplate.name === allTemplates[1].name) {
 
   footer {
     position: fixed;
-    bottom: 0;*
+    bottom: 0;
+    left: 0;
     width: 100%;
     background: #222;
     text-align: center;
     color: #fff;
     text-shadow: 1px 1px 1px #333;
     box-shadow: 0 -1px 2px #333;
-    padding: 20px 20px 20px 310px;
+    padding: 5px;
     z-index: 1;
-    opacity: 0;
     transition: opacity 1s;
+    height: 60px;
   }
 
   footer:hover {
     cursor: default;
-    opacity: 1;
+  }
+
+  @media only screen and (min-width: 768px) {
+    /* For iPads & Desktop: */
+    footer {
+      padding: 10px 10px 10px 310px;
+      opacity: 0;
+    }
+
+    footer:hover {
+      opacity: 1;
+    }
   }
 
   #link1Section, #link2Section {
@@ -510,7 +729,15 @@ else if (activeTemplate.name === allTemplates[1].name) {
 
   @keyframes slide-down {
     from { margin-top: -100%; }
-    to { margin-top: 30px; }
+    to { margin-top: 50px; }
+  }
+
+  @media only screen and (min-width: 768px) {
+    /* For iPads & Desktop: */
+    @keyframes slide-down {
+      from { margin-top: -100%; }
+      to { margin-top: 0; }
+    }
   }
   `;
 }

@@ -10,7 +10,23 @@ body {
   font-weight: 100;
   color: #FFF;
   letter-spacing: 0.05em;
-  font-size: 16px;
+  font-size: 0.8em;
+  text-shadow: 1px 1px 4px #057287;
+  overflow-x: hidden;
+}
+
+@media only screen and (min-width: 340px) {
+  /* For more than really, really tiny screens */
+  body {
+    font-size: 0.9em;
+  }
+}
+
+@media only screen and (min-width: 420px) {
+  /* For more than really tiny screens */
+  body {
+    font-size: 16px;
+  }
 }
 
 a {
@@ -35,8 +51,8 @@ p {
   min-height: 100vh;
   min-width: 100vw;
   background: linear-gradient(#4ec3d8, #07a4c1) fixed;
-  background-size: cover;
   background-attachment: fixed;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,8 +64,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 260px;
+  width: 100%;
   background: #000;
   text-align: center;
   box-shadow: 0 3px 1px #222;
@@ -60,13 +75,10 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 nav li {
-  padding: 30px 71px;
+  padding: 30px 45px;
   background: #000;
   font-size: 1.2em;
   text-shadow: 2px 2px 2px #333;
@@ -74,14 +86,48 @@ nav li {
 }
 
 nav li:hover {
-  background: #057287;
+  background: #057287
+}
+
+nav ul:hover {
   cursor: default;
+}
+
+/* Nav for Mobile: */
+
+.mobile:hover {
+  background: #222;
+}
+
+.dropdown-content {
+    display: none;
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For iPads & Desktop: */
+
+  .mobile {
+    display: none;
+  }
+
+  .dropdown-content {
+    display: block;
+  }
+
+  nav li {
+    display: inline-block;
+  }
 }
 
 header {
   display: block;
-  margin: 30px 30px 30px 290px;
-  padding: 30px;
+  margin: 80px 0;
+  padding: 10px;
   line-height: 2em;
   text-align: center;
   cursor: default;
@@ -89,9 +135,9 @@ header {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
+  line-height: 1em;
   font-weight: 900;
-  text-shadow: 3px 3px 3px #057287;
   padding: 10px 30px 30px 30px;
   animation-name: h1-animation;
   animation-duration: 3s;
@@ -99,17 +145,38 @@ h1 {
   white-space: nowrap;
 }
 
-h1:hover {
-  transform: translate(10px, 0);
+@media only screen and (min-width: 420px) {
+  /* For larger than really, really tiny mobile screens: */
+
+  header {
+    margin: 80px 0;
+    padding: 20px 40px;
+  }
 }
 
-@keyframes h1-animation {
-  from { opacity: 0; margin-right: 500px; }
-  to { opacity: 1; margin-right: 0; }
+@media only screen and (min-width: 768px) {
+  /* For iPads & Desktop: */
+
+  header {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h1:hover {
+    transform: translate(10px, 0);
+  }
+
+  @keyframes h1-animation {
+    from { opacity: 0; margin-right: 500px; }
+    to { opacity: 1; margin-right: 0; }
+  }
 }
 
 header p {
-  text-shadow: 2px 2px 3px #057287;
   margin: 20px;
 }
 
@@ -117,38 +184,57 @@ header p a:hover {
   cursor: auto;
 }
 
-
 section {
   position: relative;
-  margin: 30px 30px 30px 290px;
-  padding: 30px;
+  margin: 80px 0;
+  padding: 10px;
   line-height: 2em;
-  text-shadow: 1px 1px 3px #057287;
   overflow: auto;
   border-radius: 20px;
-  opacity: 1.0;
   text-align: justify;
+  opacity: ${backgroundOpacity};
+  background: ${sectionBackground};
 }
 
-
 h2 {
-  font-size: 3em;
+  font-size: 2em;
+  line-height: 1em;
   font-weight: 900;
   text-align: center;
-  padding-bottom: 40px;
-  text-shadow: 2px 2px 4px #057287;
+  padding-bottom: 10px;
   animation-name: h2-animation;
   animation-duration: 2.5s;
   transition: transform 1s;
 }
 
-@keyframes h2-animation {
-  from { margin-left: 500px; opacity: 0; }
-  to { margin-left: 0px; opacity: 1; }
+@media only screen and (min-width: 420px) {
+  /* For larger than really, really tiny mobile screens: */
+
+  section {
+    margin: 80px 0;
+    padding: 20px 50px;
+  }
 }
 
-h2:hover {
-  transform: translate(10px, 0);
+@media only screen and (min-width: 768px) {
+  /* For iPads & Desktop: */
+  section {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  h2 {
+    font-size: 3em;
+  }
+
+  @keyframes h2-animation {
+    from { margin-left: 500px; opacity: 0; }
+    to { margin-left: 0px; opacity: 1; }
+  }
+
+  h2:hover {
+    transform: translate(10px, 0);
+  }
 }
 
 img {
@@ -200,21 +286,22 @@ input:focus {
 footer {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
-  background: #222;
+  background: #000;
   text-align: center;
-  color: #fff;
+  color: #8c8c8c;
   text-shadow: 1px 1px 1px #333;
-  box-shadow: 0 -1px 2px #333;
-  padding: 20px 20px 20px 310px;
+  box-shadow: 0 -2px 1px #333;
+  padding: 5px;
+  height: 60px;
   z-index: 1;
-  opacity: 0;
-  transition: opacity 1s;
+  transition: color 1s;
 }
 
 footer:hover {
   cursor: default;
-  opacity: 1;
+  color: #fff;
 }
 
 #link1Section, #link2Section {
@@ -227,5 +314,13 @@ footer:hover {
 
 @keyframes slide-down {
   from { margin-top: -100%; }
-  to { margin-top: 30px; }
+  to { margin-top: 80px; }
+}
+
+@media only screen and (min-width: 420px) {
+  /* For iPads & Desktop & Larger Mobiles: */
+  @keyframes slide-down {
+    from { margin-top: -100%; }
+    to { margin-top: 80px; }
+  }
 }
