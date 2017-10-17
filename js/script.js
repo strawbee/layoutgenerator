@@ -314,31 +314,11 @@ document.getElementById('backgroundsPreviousButton').addEventListener('click', b
 document.getElementById('getCodeButton').addEventListener('click', function() { window.open('code.html', '_blank'); });
 
 // Menu Toggle for mobile
-const mq = window.matchMedia( "(min-width: 768px)" );
-
 function toggleMenu() {
-  if (mq.matches) {
-    dropdownContent.style.display = 'block';
-  } else {
-    if (dropdownContent.style.display === 'none') {
-      dropdownContent.style.display = 'block';
-    } else {
-      dropdownContent.style.display = 'none';
-    }
-  }
-};
-
-function checkSize() {
-  if (mq.matches) {
-    dropdownContent.style.display = 'block';
-  }
-  else {
-    dropdownContent.style.display = 'none';
-  }
+  dropdownContent.classList.toggle('show');
 }
 
 document.getElementById('dropdown').addEventListener('click', toggleMenu);
-window.addEventListener('resize', checkSize);
 
 // Apply Templates Event Listener
 document.getElementById('templatesForm').addEventListener('submit', applyTemplates);

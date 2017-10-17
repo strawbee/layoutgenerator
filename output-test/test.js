@@ -56,6 +56,13 @@ function thirdLink() {
 
 /* ==================================== EVENT LISTENERS ==================================== */
 
+// Menu Toggle for mobile
+function toggleMenu() {
+  dropdownContent.classList.toggle('show');
+}
+
+document.getElementById('dropdown').addEventListener('click', toggleMenu);
+
 // Navigation Event Listeners
 homeLink.addEventListener('click', goHome);
 link2.addEventListener('click', secondLink);
