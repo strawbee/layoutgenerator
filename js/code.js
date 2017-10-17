@@ -144,12 +144,12 @@ if (activeTemplate.name === allTemplates[0].name) {
     transition: background 1s;
   }
 
-  nav li:hover {
-    background: #057287
+  nav ul:hover {
+    cursor: context-menu;
   }
 
-  nav ul:hover {
-    cursor: default;
+  nav li:hover {
+    background: #057287;
   }
 
   /* Nav for Mobile: */
@@ -158,12 +158,12 @@ if (activeTemplate.name === allTemplates[0].name) {
     background: #222;
   }
 
-  .dropdown-content {
+  #dropdownContent {
       display: none;
       z-index: 100;
   }
 
-  .dropdown:hover .dropdown-content {
+  #dropdown:hover #dropdownContent {
       display: block;
   }
 
@@ -174,7 +174,7 @@ if (activeTemplate.name === allTemplates[0].name) {
       display: none;
     }
 
-    .dropdown-content {
+    #dropdownContent {
       display: block;
     }
 
@@ -478,11 +478,11 @@ else if (activeTemplate.name === allTemplates[1].name) {
   }
 
   nav ul:hover {
-    cursor: default;
+    cursor: context-menu;
   }
 
   nav li:hover {
-    background: ${activeTemplate.colors[2]};
+    background: #057287;
   }
 
   /* Nav for Mobile: */
@@ -491,12 +491,12 @@ else if (activeTemplate.name === allTemplates[1].name) {
     background: #222;
   }
 
-  .dropdown-content {
+  #dropdownContent {
       display: none;
       z-index: 100;
   }
 
-  .dropdown:hover .dropdown-content {
+  #dropdown:hover #dropdownContent {
       display: block;
   }
 
@@ -507,7 +507,7 @@ else if (activeTemplate.name === allTemplates[1].name) {
       display: none;
     }
 
-    .dropdown-content {
+    #dropdownContent {
       display: block;
     }
 
@@ -809,6 +809,30 @@ if (firstTwoTemplates) {
     homeLink.addEventListener('click', goHome);
     link2.addEventListener('click', secondLink);
     link1.addEventListener('click', thirdLink);
+
+    // Menu Toggle for Mobile
+    var dropdownContent = document.getElementById('dropdownContent');
+
+    function toggleMenu() {
+      if (dropdownContent.style.display === 'none') {
+        dropdownContent.style.display = 'block';
+      } else {
+        dropdownContent.style.display = 'none';
+      }
+    };
+
+    function checkSize() {
+      const mq = window.matchMedia( "(min-width: 768px)" );
+      if (mq.matches) {
+        dropdownContent.style.display = 'block';
+      }
+      else {
+        dropdownContent.style.display = 'none';
+      }
+    }
+
+    document.getElementById('dropdown').addEventListener('click', toggleMenu);
+    window.addEventListener('resize', checkSize);
 
     // Nav Mouseovers
     homeLink.addEventListener('mouseover', function() { this.style.backgroundColor = '${activeTemplate.colors[2]}'; });
