@@ -493,3 +493,8 @@ footer:hover {
    header { width: 90vw; }
    section { width: 90vw; }
 }
+
+@media all and (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+   header { width: 70vw; }
+   section { width: 70vw; }
+}
