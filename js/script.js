@@ -303,8 +303,7 @@ if (localStorage.colorStored === 'true') {
 /* ==================================== EVENT LISTENERS + ==================================== */
 
 // For troubleshooting JS on mobile
-document.getElementById('clearLocalStorage').addEventListener('click', function() { localStorage.clear(); document.getElementById('localStorageCleared').textContent = 'Your local storage has been cleared.'; });
-document.getElementById('refreshPage').addEventListener('click', function() { window.location.reload('true'); });
+document.getElementById('clearLocalStorage').addEventListener('click', function() { localStorage.clear(); document.getElementById('localStorageCleared').innerHTML = 'Your local storage has been cleared. (<a href="index.html">Refresh Page</a>).'; });
 
 // Navigation Event Listeners
 homeLink.addEventListener('click', goHome);

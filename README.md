@@ -9,6 +9,4 @@ I am branching off of that with my individual content contributions and improvin
 * ~~refactored JavaScript~~
 * ~~Responsive design-ize everything~~
 * ~~Safari local storage fix~~
-* ~~Cross browser compatibility~~ kind of. Latest versions of all major browsers work now except IE, which is completely fucked.
-* Put code output in a modal window instead
-* More templates
+* ~~Cross browser compatibility~~ Works in the latest version of popular browsers now.

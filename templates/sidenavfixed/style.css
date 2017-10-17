@@ -4,7 +4,6 @@
 
 * {
   box-sizing: border-box;
-  white-space: normal;
 }
 
 body {
@@ -487,4 +486,10 @@ footer:hover {
     from { margin-top: -100%; }
     to { margin-top: 30px; }
   }
+}
+
+/* IE Flex Fix */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+   header { width: 90vw; }
+   section { width: 90vw; }
 }
