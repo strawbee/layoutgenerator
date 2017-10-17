@@ -323,9 +323,11 @@ if (firstTwoTemplates) {
   homeLink.addEventListener('mouseover', function() { this.style.backgroundColor = activeColors[2]; });
   aboutLink.addEventListener('mouseover', function() { this.style.backgroundColor = activeColors[2]; });
   templatesLink.addEventListener('mouseover', function() { this.style.backgroundColor = activeColors[2]; });
+  codeLink.addEventListener('mouseover', function() { this.style.backgroundColor = activeColors[2]; });
   homeLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#333'; });
   aboutUsLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
   templatesLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
+  codeLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
   if (templatesSection.style.display === 'block') {
     templatesLink.style.backgroundColor = '#333';
     homeLink.style.backgroundColor = '#000';

@@ -27,6 +27,11 @@ p {
   margin: 15px 0;
 }
 
+ul {
+  font-size: 1em;
+  list-style: disc;
+}
+
 #wrapper {
   position: absolute;
   top: 0;
@@ -157,6 +162,6 @@ pre {
   font-size: 0.9em;
 }
 
-#ifBackground {
+#ifBackground, #ifBackground2 {
   display: none;
 }

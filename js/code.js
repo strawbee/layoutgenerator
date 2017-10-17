@@ -48,8 +48,10 @@ if (localStorage.backgroundStored === 'true') {
 /* =============================== OUTPUTS RELEVANT CSS CODE =============================== */
 
 if (localStorage.backgroundStored === 'true') {
-  document.getElementById('backgroundImage').innerHTML = '<a href="https://raw.githubusercontent.com/strawbee/layoutgenerator/master/' + activeBackground + '" target="_blank" alt="background image" title="save this image">this link</a>';
+  document.getElementById('backgroundImage').innerHTML = '<a href="https://raw.githubusercontent.com/strawbee/layoutgenerator/master/' + localStorage.background + '" target="_blank" alt="background image" title="save this image">this link</a>';
+  document.getElementById('backgroundImage2').innerHTML = '<a href="https://raw.githubusercontent.com/strawbee/layoutgenerator/master/' + localStorage.background + '" target="_blank" alt="background image" title="save this image">this link</a>';
   document.getElementById('ifBackground').style.display = 'block';
+  document.getElementById('ifBackground2').style.display = 'block';
 }
 
 if (activeTemplate.name === allTemplates[0].name) {
