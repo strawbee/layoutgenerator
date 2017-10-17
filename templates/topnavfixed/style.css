@@ -94,9 +94,12 @@ nav li {
   transition: background 1s;
 }
 
+nav ul:hover {
+  cursor: context-menu;
+}
+
 nav li:hover {
   background: #057287;
-  cursor: default;
 }
 
 #homeLink {
@@ -109,13 +112,13 @@ nav li:hover {
   background: #222;
 }
 
-.dropdown-content {
+#dropdownContent {
     display: none;
     z-index: 100;
 }
 
 /*
-.dropdown:hover .dropdown-content {
+#dropdown:hover #dropdownContent {
     display: block;
 }
 */
@@ -127,7 +130,7 @@ nav li:hover {
     display: none;
   }
 
-  .dropdown-content {
+  #dropdownContent {
     display: block;
   }
 
@@ -157,13 +160,12 @@ h1 {
   white-space: nowrap;
 }
 
-
 @media only screen and (min-width: 420px) {
   /* For larger than really, really tiny mobile screens: */
 
   header {
     margin: 110px 0 80px 0;
-    padding: 40px;
+    padding: 30px 40px;
   }
 }
 
@@ -225,7 +227,7 @@ h2 {
 
   section {
     margin: 110px 0 80px 0;
-    padding: 40px 50px;
+    padding: 30px 50px;
   }
 }
 
