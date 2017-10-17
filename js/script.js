@@ -114,7 +114,7 @@ function changeColor(arr) {
   }
 }
 
-function applyBackgrounds() {
+function applyBackgrounds(event) {
   event.preventDefault();
   var possibleBackgrounds = document.getElementsByName('backgroundsRadioButton');
 
