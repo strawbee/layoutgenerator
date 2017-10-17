@@ -83,7 +83,7 @@ function applyTemplates(event) {
       stylesheets[1].href = Templates.all[radio].stylesheet;
       localStorage['template'] = JSON.stringify(Templates.all[radio]);
       localStorage.templateStored = 'true';
-      window.location.reload('true');
+      window.location.reload();
     }
   }
 }

@@ -32,7 +32,7 @@ if (localStorage.colorStored === 'true') {
 }
 
 if (localStorage.backgroundStored === 'true') {
-  activeBackground = 'url(\'background.jpg\');';
+  activeBackground = 'url(\'background.jpg\')';
   if (firstTwoTemplates) {
     backgroundOpacity = '0.8;';
     sectionBackground = '#000;';
@@ -109,7 +109,7 @@ if (activeTemplate.name === allTemplates[0].name) {
     left: 0;
     min-height: 100vh;
     min-width: 100vw;
-    background: linear-gradient(#4ec3d8, #07a4c1) fixed;
+    background: ${activeBackground};
     background-attachment: fixed;
     background-size: cover;
     display: flex;
