@@ -314,16 +314,21 @@ document.getElementById('backgroundsPreviousButton').addEventListener('click', b
 document.getElementById('getCodeButton').addEventListener('click', function() { window.open('code.html', '_blank'); });
 
 // Menu Toggle for mobile
+const mq = window.matchMedia( "(min-width: 768px)" );
+
 function toggleMenu() {
-  if (dropdownContent.style.display === 'none') {
+  if (mq.matches) {
     dropdownContent.style.display = 'block';
   } else {
-    dropdownContent.style.display = 'none';
+    if (dropdownContent.style.display === 'none') {
+      dropdownContent.style.display = 'block';
+    } else {
+      dropdownContent.style.display = 'none';
+    }
   }
 };
 
 function checkSize() {
-  const mq = window.matchMedia( "(min-width: 768px)" );
   if (mq.matches) {
     dropdownContent.style.display = 'block';
   }
@@ -332,7 +337,7 @@ function checkSize() {
   }
 }
 
-document.getElementById('mobileMenu').addEventListener('click', toggleMenu);
+document.getElementById('dropdown').addEventListener('click', toggleMenu);
 window.addEventListener('resize', checkSize);
 
 // Apply Templates Event Listener

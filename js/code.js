@@ -755,6 +755,7 @@ if (firstTwoTemplates) {
     var homeLink = document.getElementById('homeLink');
     var link2 = document.getElementById('link2');
     var link1 = document.getElementById('link1');
+    var dropdownContent = document.getElementById('dropdownContent');
 
     /* ==================== NAV FUNCTIONS ==================== */
 
@@ -811,18 +812,21 @@ if (firstTwoTemplates) {
     link1.addEventListener('click', thirdLink);
 
     // Menu Toggle for Mobile
-    var dropdownContent = document.getElementById('dropdownContent');
+    const mq = window.matchMedia( "(min-width: 768px)" );
 
     function toggleMenu() {
-      if (dropdownContent.style.display === 'none') {
+      if (mq.matches) {
         dropdownContent.style.display = 'block';
       } else {
-        dropdownContent.style.display = 'none';
+        if (dropdownContent.style.display === 'none') {
+          dropdownContent.style.display = 'block';
+        } else {
+          dropdownContent.style.display = 'none';
+        }
       }
     };
 
     function checkSize() {
-      const mq = window.matchMedia( "(min-width: 768px)" );
       if (mq.matches) {
         dropdownContent.style.display = 'block';
       }
@@ -831,7 +835,7 @@ if (firstTwoTemplates) {
       }
     }
 
-    document.getElementById('mobileMenu').addEventListener('click', toggleMenu);
+    document.getElementById('dropdown').addEventListener('click', toggleMenu);
     window.addEventListener('resize', checkSize);
 
     // Nav Mouseovers
