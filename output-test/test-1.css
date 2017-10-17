@@ -70,6 +70,7 @@ nav {
   text-align: center;
   box-shadow: 0 3px 1px #222;
   z-index: 2;
+  overflow: hidden;
 }
 
 nav ul {

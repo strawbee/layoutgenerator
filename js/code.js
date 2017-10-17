@@ -247,7 +247,7 @@ if (activeTemplate.name === allTemplates[0].name) {
 
   section {
     position: relative;
-    margin: 100px 0 80px 0;
+    margin: 100px 10px 80px 10px;
     padding: 10px;
     line-height: 2em;
     overflow: auto;
@@ -272,8 +272,8 @@ if (activeTemplate.name === allTemplates[0].name) {
     /* For larger than really, really tiny mobile screens: */
 
     section {
-      margin: 110px 0 80px 0;
-      padding: 20px 50px;
+      margin: 110px 10px 80px 10px;
+      padding: 20px 40px;
     }
   }
 
@@ -593,7 +593,7 @@ else if (activeTemplate.name === allTemplates[1].name) {
 
   section {
     position: relative;
-    margin: 100px 0 80px 0;
+    margin: 100px 10px 80px 10px;
     padding: 10px;
     line-height: 2em;
     overflow: auto;
@@ -618,7 +618,7 @@ else if (activeTemplate.name === allTemplates[1].name) {
     /* For larger than really, really tiny mobile screens: */
 
     section {
-      padding: 20px 50px;
+      padding: 20px 40px;
     }
   }
 

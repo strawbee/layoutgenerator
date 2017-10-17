@@ -114,7 +114,7 @@ function changeColor(arr) {
   }
 }
 
-function applyBackgrounds() {
+function applyBackgrounds(event) {
   event.preventDefault();
   var possibleBackgrounds = document.getElementsByName('backgroundsRadioButton');
 
@@ -321,7 +321,14 @@ function toggleMenu() {
   dropdownContent.classList.toggle('show');
 }
 
+function closeDropdown(event) {
+  if (event.target !== document.getElementsByClassName('mobile')[0] && dropdownContent.classList.contains('show')) {
+    dropdownContent.classList.toggle('show');
+  }
+}
+
 document.getElementById('dropdown').addEventListener('click', toggleMenu);
+document.addEventListener('click', closeDropdown);
 
 // Apply Templates Event Listener
 document.getElementById('templatesForm').addEventListener('submit', applyTemplates);
