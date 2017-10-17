@@ -80,10 +80,10 @@ function applyTemplates(event) {
   localStorage.startAtTemplate = 'true';
   for (var radio = 0; radio < Templates.all.length; radio++) {
     if (possibleTemplates[radio].checked === true) {
-      stylesheets[1].href = Templates.all[radio];
+      stylesheets[1].href = Templates.all[radio].stylesheet;
       localStorage['template'] = JSON.stringify(Templates.all[radio]);
       localStorage.templateStored = 'true';
-      window.location.reload('true');
+      //window.location.reload('true');
     }
   }
 }
