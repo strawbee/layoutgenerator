@@ -314,7 +314,8 @@ document.getElementById('backgroundsPreviousButton').addEventListener('click', b
 document.getElementById('getCodeButton').addEventListener('click', function() { window.open('code.html', '_blank'); });
 
 // Menu Toggle for mobile
-const mq = window.matchMedia( "(min-width: 768px)" );
+
+var mq = window.matchMedia( '(min-width: 768px)' );
 
 function toggleMenu() {
   if (mq.matches) {

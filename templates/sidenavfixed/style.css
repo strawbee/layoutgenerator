@@ -78,6 +78,7 @@ nav {
   text-align: center;
   box-shadow: 0 3px 1px #222;
   z-index: 2;
+  white-space: nowrap;
 }
 
 
@@ -85,6 +86,7 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  white-space: nowrap;
 }
 
 nav li {
@@ -93,6 +95,7 @@ nav li {
   font-size: 1.2em;
   text-shadow: 2px 2px 2px #333;
   transition: background 1s;
+  white-space: nowrap;
 }
 
 nav ul:hover {
@@ -116,6 +119,7 @@ nav li:hover {
 #dropdownContent {
     display: none;
     z-index: 100;
+    white-space: nowrap;
 }
 
 /*
