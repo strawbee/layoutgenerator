@@ -4,7 +4,6 @@
 
 * {
   box-sizing: border-box;
-  white-space: normal;
 }
 
 body {
@@ -145,6 +144,7 @@ header {
   line-height: 2em;
   text-align: left;
   cursor: default;
+  white-space: normal;
   overflow: auto;
 }
 
@@ -209,6 +209,7 @@ section {
   line-height: 2em;
   overflow: auto;
   border-radius: 20px;
+  white-space: normal;
   opacity: 1.0;
 }
 
