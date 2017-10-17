@@ -104,10 +104,6 @@ nav ul:hover {
     z-index: 100;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 @media only screen and (min-width: 768px) {
   /* For iPads & Desktop: */
 
