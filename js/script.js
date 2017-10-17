@@ -302,6 +302,9 @@ var firstTwoTemplates = activeTemplate.name === Templates.all[0].name || Templat
 
 /* ==================================== EVENT LISTENERS + ==================================== */
 
+// For troubleshooting JS on mobile
+document.getElementById('clearLocalStorage').addEventListener('click', function() { localStorage.clear(); });
+
 // Navigation Event Listeners
 homeLink.addEventListener('click', goHome);
 aboutLink.addEventListener('click', goAbout);

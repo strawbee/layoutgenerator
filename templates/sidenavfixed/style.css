@@ -122,12 +122,6 @@ nav li:hover {
   display: block;
 }
 
-/*
-#dropdown:hover #dropdownContent {
-    display: block;
-}
-*/
-
 @media only screen and (min-width: 768px) {
   /* For iPads & Desktop: */
 
@@ -160,7 +154,7 @@ header {
   margin: 80px 0;
   padding: 10px;
   line-height: 2em;
-  text-align: center;
+  text-align: left;
   cursor: default;
   overflow: auto;
 }
@@ -173,6 +167,7 @@ h1 {
   animation-name: h1-animation;
   animation-duration: 3s;
   transition: transform 1s;
+  text-align: center;
   white-space: nowrap;
 }
 
@@ -190,6 +185,7 @@ h1 {
   header {
     margin: 30px 30px 30px 290px;
     padding: 30px;
+    text-align: center;
   }
 
   h1 {

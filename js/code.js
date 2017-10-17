@@ -158,13 +158,13 @@ if (activeTemplate.name === allTemplates[0].name) {
     background: #222;
   }
 
-  #dropdownContent {
+  .dropdown-content {
       display: none;
       z-index: 100;
   }
 
-  #dropdown:hover #dropdownContent {
-      display: block;
+  .show {
+    display: block;
   }
 
   @media only screen and (min-width: 768px) {
@@ -174,7 +174,7 @@ if (activeTemplate.name === allTemplates[0].name) {
       display: none;
     }
 
-    #dropdownContent {
+    .dropdown-content {
       display: block;
     }
 
@@ -188,7 +188,7 @@ if (activeTemplate.name === allTemplates[0].name) {
     margin: 80px 0;
     padding: 10px;
     line-height: 2em;
-    text-align: center;
+    text-align: left;
     cursor: default;
     overflow: auto;
   }
@@ -201,6 +201,7 @@ if (activeTemplate.name === allTemplates[0].name) {
     animation-name: h1-animation;
     animation-duration: 3s;
     transition: transform 1s;
+    text-align: center;
     white-space: nowrap;
   }
 
@@ -208,8 +209,8 @@ if (activeTemplate.name === allTemplates[0].name) {
     /* For larger than really, really tiny mobile screens: */
 
     header {
-      margin: 80px 0;
-      padding: 20px 40px;
+      margin: 110px 0 80px 0;
+      padding: 30px 40px;
     }
   }
 
@@ -219,6 +220,7 @@ if (activeTemplate.name === allTemplates[0].name) {
     header {
       margin-left: 50px;
       margin-right: 50px;
+      text-align: center;
     }
 
     h1 {
@@ -491,13 +493,13 @@ else if (activeTemplate.name === allTemplates[1].name) {
     background: #222;
   }
 
-  #dropdownContent {
+  .dropdown-content {
       display: none;
       z-index: 100;
   }
 
-  #dropdown:hover #dropdownContent {
-      display: block;
+  .show {
+    display: block;
   }
 
   @media only screen and (min-width: 768px) {
@@ -507,7 +509,7 @@ else if (activeTemplate.name === allTemplates[1].name) {
       display: none;
     }
 
-    #dropdownContent {
+    .dropdown-content {
       display: block;
     }
 
@@ -529,10 +531,10 @@ else if (activeTemplate.name === allTemplates[1].name) {
 
   header {
     display: block;
-    margin: 50px 0;
+    margin: 80px 0;
     padding: 10px;
     line-height: 2em;
-    text-align: center;
+    text-align: left;
     cursor: default;
     overflow: auto;
   }
@@ -541,10 +543,11 @@ else if (activeTemplate.name === allTemplates[1].name) {
     font-size: 2em;
     line-height: 1em;
     font-weight: 900;
-    padding: 10px 30px;
+    padding: 10px 30px 30px 30px;
     animation-name: h1-animation;
     animation-duration: 3s;
     transition: transform 1s;
+    text-align: center;
     white-space: nowrap;
   }
 
@@ -552,7 +555,6 @@ else if (activeTemplate.name === allTemplates[1].name) {
     /* For larger than really, really tiny mobile screens: */
 
     header {
-      margin: 80px 0;
       padding: 40px;
     }
   }
@@ -561,8 +563,9 @@ else if (activeTemplate.name === allTemplates[1].name) {
     /* For iPads & Desktop: */
 
     header {
-      margin: 0 30px 30px 290px;
+      margin: 30px 30px 30px 290px;
       padding: 30px;
+      text-align: center;
     }
 
     h1 {
@@ -811,32 +814,12 @@ if (firstTwoTemplates) {
     link2.addEventListener('click', secondLink);
     link1.addEventListener('click', thirdLink);
 
-    // Menu Toggle for Mobile
-    const mq = window.matchMedia( "(min-width: 768px)" );
-
+    // Menu Toggle for mobile
     function toggleMenu() {
-      if (mq.matches) {
-        dropdownContent.style.display = 'block';
-      } else {
-        if (dropdownContent.style.display === 'none') {
-          dropdownContent.style.display = 'block';
-        } else {
-          dropdownContent.style.display = 'none';
-        }
-      }
-    };
-
-    function checkSize() {
-      if (mq.matches) {
-        dropdownContent.style.display = 'block';
-      }
-      else {
-        dropdownContent.style.display = 'none';
-      }
+      dropdownContent.classList.toggle('show');
     }
 
     document.getElementById('dropdown').addEventListener('click', toggleMenu);
-    window.addEventListener('resize', checkSize);
 
     // Nav Mouseovers
     homeLink.addEventListener('mouseover', function() { this.style.backgroundColor = '${activeTemplate.colors[2]}'; });
