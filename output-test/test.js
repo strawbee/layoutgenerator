@@ -6,6 +6,7 @@ var link2Section = document.getElementById('link2Section');
 var homeLink = document.getElementById('homeLink');
 var link2 = document.getElementById('link2');
 var link1 = document.getElementById('link1');
+var dropdownContent = document.getElementById('dropdownContent');
 
 /* ================================== NAV FUNCTIONS ================================== */
 

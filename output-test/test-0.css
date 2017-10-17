@@ -104,6 +104,10 @@ nav ul:hover {
     z-index: 100;
 }
 
+.show {
+  display: block;
+}
+
 @media only screen and (min-width: 768px) {
   /* For iPads & Desktop: */
 
@@ -122,7 +126,7 @@ nav ul:hover {
 
 header {
   display: block;
-  margin: 80px 0;
+  margin: 100px 0 80px 0;
   padding: 10px;
   line-height: 2em;
   text-align: center;
@@ -145,7 +149,7 @@ h1 {
   /* For larger than really, really tiny mobile screens: */
 
   header {
-    margin: 80px 0;
+    margin: 110px 0 80px 0;
     padding: 20px 40px;
   }
 }
@@ -182,7 +186,7 @@ header p a:hover {
 
 section {
   position: relative;
-  margin: 80px 0;
+  margin: 100px 0 80px 0;
   padding: 10px;
   line-height: 2em;
   overflow: auto;
@@ -207,7 +211,7 @@ h2 {
   /* For larger than really, really tiny mobile screens: */
 
   section {
-    margin: 80px 0;
+    margin: 110px 0 80px 0;
     padding: 20px 50px;
   }
 }
@@ -310,13 +314,13 @@ footer:hover {
 
 @keyframes slide-down {
   from { margin-top: -100%; }
-  to { margin-top: 80px; }
+  to { margin-top: 100px; }
 }
 
 @media only screen and (min-width: 420px) {
   /* For iPads & Desktop & Larger Mobiles: */
   @keyframes slide-down {
     from { margin-top: -100%; }
-    to { margin-top: 80px; }
+    to { margin-top: 110px; }
   }
 }
