@@ -145,7 +145,6 @@ header {
   text-align: left;
   cursor: default;
   overflow: auto;
-  -ms-flex: 0 1 auto;
 }
 
 h1 {
@@ -210,7 +209,6 @@ section {
   overflow: auto;
   border-radius: 20px;
   opacity: 1.0;
-  -ms-flex: 0 1 auto;
 }
 
 h2 {
@@ -468,10 +466,6 @@ footer:hover {
 
 /* IE Flex Fix */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-   header { width: 100%; }
-   section { width: 100%; }
-}
-
-p {
-  -ms-flex: 0 1 auto;
+   header { width: 90vw; }
+   section { width: 90vw; }
 }

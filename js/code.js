@@ -385,6 +385,11 @@ if (activeTemplate.name === allTemplates[0].name) {
       to { margin-top: 110px; }
     }
   }
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     header { width: 90vw; }
+     section { width: 90vw; }
+  }
   `;
 }
 
@@ -742,6 +747,11 @@ else if (activeTemplate.name === allTemplates[1].name) {
       from { margin-top: -100%; }
       to { margin-top: 0; }
     }
+  }
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     header { width: 90vw; }
+     section { width: 90vw; }
   }
   `;
 }
