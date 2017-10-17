@@ -831,7 +831,7 @@ if (firstTwoTemplates) {
       }
     }
 
-    document.getElementById('dropdown').addEventListener('click', toggleMenu);
+    document.getElementById('mobileMenu').addEventListener('click', toggleMenu);
     window.addEventListener('resize', checkSize);
 
     // Nav Mouseovers
